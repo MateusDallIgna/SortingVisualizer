@@ -201,6 +201,30 @@ src/render.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/render.cpp.s
 .PHONY : src/render.cpp.s
 
+src/theme.o: src/theme.cpp.o
+.PHONY : src/theme.o
+
+# target to build an object file
+src/theme.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/theme.cpp.o
+.PHONY : src/theme.cpp.o
+
+src/theme.i: src/theme.cpp.i
+.PHONY : src/theme.i
+
+# target to preprocess a source file
+src/theme.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/theme.cpp.i
+.PHONY : src/theme.cpp.i
+
+src/theme.s: src/theme.cpp.s
+.PHONY : src/theme.s
+
+# target to generate assembly for a file
+src/theme.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/theme.cpp.s
+.PHONY : src/theme.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... src/render.o"
 	@echo "... src/render.i"
 	@echo "... src/render.s"
+	@echo "... src/theme.o"
+	@echo "... src/theme.i"
+	@echo "... src/theme.s"
 .PHONY : help
 
 

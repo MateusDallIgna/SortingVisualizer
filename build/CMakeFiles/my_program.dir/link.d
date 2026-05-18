@@ -5,6 +5,7 @@ my_program: \
   CMakeFiles/my_program.dir/main.cpp.o \
   CMakeFiles/my_program.dir/src/algorithms.cpp.o \
   CMakeFiles/my_program.dir/src/render.cpp.o \
+  CMakeFiles/my_program.dir/src/theme.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/libraylib.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/libm.so \
@@ -57,6 +58,8 @@ CMakeFiles/my_program.dir/main.cpp.o:
 CMakeFiles/my_program.dir/src/algorithms.cpp.o:
 
 CMakeFiles/my_program.dir/src/render.cpp.o:
+
+CMakeFiles/my_program.dir/src/theme.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/libraylib.so:
 

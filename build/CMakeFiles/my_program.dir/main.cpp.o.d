@@ -180,6 +180,9 @@ CMakeFiles/my_program.dir/main.cpp.o: \
  /usr/include/c++/16.1.1/pstl/glue_numeric_defs.h \
  /usr/include/c++/16.1.1/pstl/execution_defs.h \
  /home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/include/render.hpp \
+ /home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/include/theme.hpp \
+ /usr/include/raylib.h \
+ /home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/include/theme.hpp \
  /usr/include/c++/16.1.1/iostream /usr/include/c++/16.1.1/ostream \
  /usr/include/c++/16.1.1/bits/ostream.h /usr/include/c++/16.1.1/ios \
  /usr/include/c++/16.1.1/streambuf \
@@ -195,5 +198,5 @@ CMakeFiles/my_program.dir/main.cpp.o: \
  /usr/include/c++/16.1.1/bits/basic_ios.tcc \
  /usr/include/c++/16.1.1/bits/ostream_print.h \
  /usr/include/c++/16.1.1/bits/ostream.tcc /usr/include/c++/16.1.1/istream \
- /usr/include/c++/16.1.1/bits/istream.tcc /usr/include/raylib.h \
+ /usr/include/c++/16.1.1/bits/istream.tcc \
  /usr/include/c++/16.1.1/stdlib.h

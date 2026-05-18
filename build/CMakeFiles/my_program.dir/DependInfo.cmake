@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/main.cpp" "CMakeFiles/my_program.dir/main.cpp.o" "gcc" "CMakeFiles/my_program.dir/main.cpp.o.d"
   "/home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/src/algorithms.cpp" "CMakeFiles/my_program.dir/src/algorithms.cpp.o" "gcc" "CMakeFiles/my_program.dir/src/algorithms.cpp.o.d"
   "/home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/src/render.cpp" "CMakeFiles/my_program.dir/src/render.cpp.o" "gcc" "CMakeFiles/my_program.dir/src/render.cpp.o.d"
+  "/home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/src/theme.cpp" "CMakeFiles/my_program.dir/src/theme.cpp.o" "gcc" "CMakeFiles/my_program.dir/src/theme.cpp.o.d"
   "" "my_program" "gcc" "CMakeFiles/my_program.dir/link.d"
   )
 

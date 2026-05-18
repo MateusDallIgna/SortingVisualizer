@@ -1,8 +1,6 @@
-CMakeFiles/my_program.dir/src/render.cpp.o: \
- /home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/src/render.cpp \
+CMakeFiles/my_program.dir/src/theme.cpp.o: \
+ /home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/src/theme.cpp \
  /usr/include/stdc-predef.h \
- /home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/src/../include/render.hpp \
- /home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/src/../include/stepResult.hpp \
  /home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/src/../include/theme.hpp \
  /usr/include/raylib.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdarg.h \
@@ -116,8 +114,64 @@ CMakeFiles/my_program.dir/src/render.cpp.o: \
  /usr/include/c++/16.1.1/bits/uses_allocator_args.h \
  /usr/include/c++/16.1.1/tuple /usr/include/c++/16.1.1/bits/invoke.h \
  /usr/include/c++/16.1.1/bits/ranges_util.h \
- /usr/include/c++/16.1.1/vector \
- /usr/include/c++/16.1.1/bits/stl_uninitialized.h \
- /usr/include/c++/16.1.1/bits/stl_vector.h \
- /usr/include/c++/16.1.1/bits/stl_bvector.h \
- /usr/include/c++/16.1.1/bits/vector.tcc
+ /usr/include/c++/16.1.1/fstream /usr/include/c++/16.1.1/istream \
+ /usr/include/c++/16.1.1/ios /usr/include/c++/16.1.1/exception \
+ /usr/include/c++/16.1.1/bits/exception_ptr.h \
+ /usr/include/c++/16.1.1/bits/cxxabi_init_exception.h \
+ /usr/include/c++/16.1.1/typeinfo \
+ /usr/include/c++/16.1.1/bits/nested_exception.h \
+ /usr/include/c++/16.1.1/bits/ios_base.h \
+ /usr/include/c++/16.1.1/ext/atomicity.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/linux/sched/types.h /usr/include/linux/types.h \
+ /usr/include/asm/types.h /usr/include/asm-generic/types.h \
+ /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
+ /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
+ /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
+ /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/types/struct___jmp_buf_tag.h \
+ /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h \
+ /usr/include/c++/16.1.1/bits/locale_classes.h \
+ /usr/include/c++/16.1.1/bits/functexcept.h \
+ /usr/include/c++/16.1.1/bits/locale_classes.tcc \
+ /usr/include/c++/16.1.1/system_error \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/error_constants.h \
+ /usr/include/c++/16.1.1/stdexcept \
+ /usr/include/c++/16.1.1/bits/stdexcept_except.h \
+ /usr/include/c++/16.1.1/streambuf \
+ /usr/include/c++/16.1.1/bits/streambuf.tcc \
+ /usr/include/c++/16.1.1/bits/basic_ios.h \
+ /usr/include/c++/16.1.1/bits/locale_facets.h \
+ /usr/include/c++/16.1.1/cwctype /usr/include/wctype.h \
+ /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/16.1.1/bits/streambuf_iterator.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/16.1.1/bits/locale_facets.tcc \
+ /usr/include/c++/16.1.1/bits/basic_ios.tcc \
+ /usr/include/c++/16.1.1/ostream /usr/include/c++/16.1.1/bits/ostream.h \
+ /usr/include/c++/16.1.1/bits/ostream_print.h \
+ /usr/include/c++/16.1.1/bits/ostream.tcc \
+ /usr/include/c++/16.1.1/bits/istream.tcc \
+ /usr/include/c++/16.1.1/bits/codecvt.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/16.1.1/bits/fstream.tcc \
+ /usr/include/c++/16.1.1/algorithm \
+ /usr/include/c++/16.1.1/bits/stl_algo.h \
+ /usr/include/c++/16.1.1/bits/algorithmfwd.h \
+ /usr/include/c++/16.1.1/bits/stl_heap.h \
+ /usr/include/c++/16.1.1/bits/uniform_int_dist.h \
+ /usr/include/c++/16.1.1/bits/stl_tempbuf.h \
+ /usr/include/c++/16.1.1/bits/ranges_algo.h \
+ /usr/include/c++/16.1.1/bits/ranges_algobase.h \
+ /usr/include/c++/16.1.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/16.1.1/pstl/execution_defs.h
