@@ -323,4 +323,102 @@ void BogoSort::reset() {
   currentState = StepResult();
 }
 
+SelectionSort::SelectionSort(std::vector<int> &array)
+    : arrayPointer(&array), currentI(0), currentJ(0), minIndex(0),
+      sortedCount(0), isDone(false) {
+  reset();
+}
+
+void SelectionSort::step() {
+  if (isDone)
+    return;
+
+  int size = arrayPointer->size();
+
+  if (currentI >= size - 1) {
+    isDone = true;
+    currentState = StepResult();
+    currentState.done = true;
+    currentState.sortedCount = size;
+    return;
+  }
+
+  currentState = StepResult();
+  currentState.indexA = currentJ;
+  currentState.indexB = minIndex;
+  currentState.sortedCount = sortedCount;
+
+  if (currentJ < size) {
+    if ((*arrayPointer)[currentJ] < (*arrayPointer)[minIndex])
+      minIndex = currentJ;
+    currentJ++;
+  }
+
+  if (currentJ >= size) {
+    if (minIndex != currentI) {
+      std::swap((*arrayPointer)[currentI], (*arrayPointer)[minIndex]);
+      currentState.swapped = true;
+    }
+    currentI++;
+    sortedCount = currentI;
+    currentJ = currentI;
+    minIndex = currentI;
+  }
+}
+
+StepResult SelectionSort::getState() const { return currentState; }
+
+void SelectionSort::reset() {
+  currentI = 0;
+  currentJ = 0;
+  minIndex = 0;
+  sortedCount = 0;
+  isDone = false;
+  currentState = StepResult();
+}
+
+GnomeSort::GnomeSort(std::vector<int> &array)
+    : arrayPointer(&array), pos(0), sortedCount(0), isDone(false) {
+  reset();
+}
+
+void GnomeSort::step() {
+  if (isDone)
+    return;
+
+  int size = arrayPointer->size();
+
+  if (pos >= size) {
+    isDone = true;
+    currentState = StepResult();
+    currentState.done = true;
+    currentState.sortedCount = size;
+    return;
+  }
+
+  currentState = StepResult();
+  currentState.indexA = pos;
+  currentState.indexB = pos - 1;
+  currentState.sortedCount = sortedCount;
+
+  if (pos == 0 || (*arrayPointer)[pos] >= (*arrayPointer)[pos - 1]) {
+    pos++;
+    sortedCount = pos;
+    currentState.swapped = false;
+  } else {
+    std::swap((*arrayPointer)[pos], (*arrayPointer)[pos - 1]);
+    currentState.swapped = true;
+    pos--;
+  }
+}
+
+StepResult GnomeSort::getState() const { return currentState; }
+
+void GnomeSort::reset() {
+  pos = 0;
+  sortedCount = 0;
+  isDone = false;
+  currentState = StepResult();
+}
+
 } // namespace Sort

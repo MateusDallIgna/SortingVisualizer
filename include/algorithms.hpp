@@ -97,5 +97,39 @@ private:
   StepResult currentState;
 };
 
+class SelectionSort : public ISorter {
+public:
+  SelectionSort(std::vector<int> &array);
+
+  void step() override;
+  StepResult getState() const override;
+  void reset() override;
+
+private:
+  std::vector<int> *arrayPointer;
+  int currentI;
+  int currentJ;
+  int minIndex;
+  int sortedCount;
+  bool isDone;
+  StepResult currentState;
+};
+
+class GnomeSort : public ISorter {
+public:
+  GnomeSort(std::vector<int> &array);
+
+  void step() override;
+  StepResult getState() const override;
+  void reset() override;
+
+private:
+  std::vector<int> *arrayPointer;
+  int pos;
+  int sortedCount;
+  bool isDone;
+  StepResult currentState;
+};
+
 } // namespace Sort
 #endif

@@ -1,3 +1,0 @@
-/home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/build/CMakeFiles/my_program.dir
-/home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/build/CMakeFiles/edit_cache.dir
-/home/mateusdall/Documentos/Big_Projects/Sorting-Visualizer/build/CMakeFiles/rebuild_cache.dir

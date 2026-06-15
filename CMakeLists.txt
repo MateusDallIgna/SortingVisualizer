@@ -6,6 +6,7 @@ add_executable(my_program
     main.cpp
     src/algorithms.cpp
     src/render.cpp
+    src/theme.cpp
 )
 
 target_link_libraries(my_program raylib)

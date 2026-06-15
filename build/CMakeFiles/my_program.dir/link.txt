@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/my_program.dir/link.d CMakeFiles/my_program.dir/main.cpp.o CMakeFiles/my_program.dir/src/algorithms.cpp.o CMakeFiles/my_program.dir/src/render.cpp.o CMakeFiles/my_program.dir/src/theme.cpp.o -o my_program  -lraylib

@@ -2,45 +2,36 @@
 #include <raylib.h>
 
 void Render::draw(const std::vector<int> array, const StepResult &state,
-                  int width, int height) {
+                  int width, int height, const Theme::Colors& colors) {
 
-  Color darkBlue = {46, 52, 64, 255};
-  Color lightBlue = {136, 192, 208, 255};
-  Color cyan = {140, 170, 200, 255};
-  Color orange = {235, 160, 90, 255};
-  Color green = {163, 190, 140, 255};
-  Color yellow = {235, 200, 100, 255};
-  Color pink = {235, 203, 209, 255};
-  Color gray = {216, 222, 233, 255};
-
-  ClearBackground(darkBlue);
+  ClearBackground(colors.background);
 
   float barWidth = (float)width / array.size();
   int gapBetweenBars = 2;
 
   for (int index = 0; index < (int)array.size(); index++) {
-    Color color = lightBlue;
+    Color color = colors.defaultBar;
 
     if (state.done) {
-      color = gray;
+      color = colors.done;
     } else {
       if (state.mergeLeft >= 0 && index >= state.mergeLeft &&
           index <= state.mergeRight) {
-        color = pink;
+        color = colors.comparingAlt;
       }
 
       if (index == state.pivot) {
-        color = yellow;
+        color = colors.pivot;
       }
 
       if (index < state.sortedCount) {
-        color = green;
+        color = colors.sorted;
       }
 
       if (index == state.indexA) {
-        color = state.swapped ? yellow : cyan;
+        color = state.swapped ? colors.pivot : colors.comparing;
       } else if (index == state.indexB) {
-        color = state.swapped ? pink : orange;
+        color = state.swapped ? colors.comparingAlt : colors.swapping;
       }
     }
 
