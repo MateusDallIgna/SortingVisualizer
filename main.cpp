@@ -15,6 +15,16 @@ const char *TITLE = "SORTING VISUALIZER";
 const int BASE_FPS = 5;
 int fps = BASE_FPS;
 
+static const char *complexities[] = {
+  "O(n²)",          // 0 Bubble Sort
+  "O(n²)",          // 1 Insertion Sort
+  "O(n·n!)",        // 2 Bogo Sort
+  "O(n log n)",     // 3 Quick Sort
+  "O(n log n)",     // 4 Merge Sort
+  "O(n²)",          // 5 Selection Sort
+  "O(n²)",          // 6 Gnome Sort
+};
+
 int main() {
 
   int amountOfNumbers = 0;
@@ -62,7 +72,6 @@ int main() {
     "Bubble Sort", "Insertion Sort", "Bogo Sort",
     "Quick Sort", "Merge Sort", "Selection Sort", "Gnome Sort"
   };
-  const char *currentAlgorithmName = algorithmNames[algorithmChoice];
 
   if (algorithmChoice == 0) {
     currentSorter = new Sort::BubbleSort(numbers);
@@ -83,6 +92,10 @@ int main() {
   std::string cachedTheme = "";
   Theme::Colors colors = Theme::getDefaultColors();
 
+  double timerStart = GetTime();
+  double timerElapsed = 0.0;
+  bool sortedWasDone = false;
+
   while (!WindowShouldClose()) {
 
     std::string currentTheme = Theme::getCurrentThemeName();
@@ -96,6 +109,8 @@ int main() {
         numbers[i] = GetRandomValue(20, HEIGHT - 100);
       }
       currentSorter->reset();
+      timerStart = GetTime();
+      sortedWasDone = false;
     }
 
     if (IsKeyPressed(KEY_N)) {
@@ -112,6 +127,8 @@ int main() {
         delete currentSorter;
         currentSorter = new Sort::BubbleSort(numbers);
         lastAlgorithm = 0;
+        if (resetOnChange) timerStart = GetTime();
+        sortedWasDone = false;
       }
     }
 
@@ -125,6 +142,8 @@ int main() {
         delete currentSorter;
         currentSorter = new Sort::InsertionSort(numbers);
         lastAlgorithm = 1;
+        if (resetOnChange) timerStart = GetTime();
+        sortedWasDone = false;
       }
     }
 
@@ -138,6 +157,8 @@ int main() {
         delete currentSorter;
         currentSorter = new Sort::BogoSort(numbers);
         lastAlgorithm = 2;
+        if (resetOnChange) timerStart = GetTime();
+        sortedWasDone = false;
       }
     }
 
@@ -151,6 +172,8 @@ int main() {
         delete currentSorter;
         currentSorter = new Sort::QuickSort(numbers);
         lastAlgorithm = 3;
+        if (resetOnChange) timerStart = GetTime();
+        sortedWasDone = false;
       }
     }
 
@@ -164,6 +187,8 @@ int main() {
         delete currentSorter;
         currentSorter = new Sort::MergeSort(numbers);
         lastAlgorithm = 4;
+        if (resetOnChange) timerStart = GetTime();
+        sortedWasDone = false;
       }
     }
 
@@ -177,6 +202,8 @@ int main() {
         delete currentSorter;
         currentSorter = new Sort::SelectionSort(numbers);
         lastAlgorithm = 5;
+        if (resetOnChange) timerStart = GetTime();
+        sortedWasDone = false;
       }
     }
 
@@ -190,6 +217,8 @@ int main() {
         delete currentSorter;
         currentSorter = new Sort::GnomeSort(numbers);
         lastAlgorithm = 6;
+        if (resetOnChange) timerStart = GetTime();
+        sortedWasDone = false;
       }
     }
 
@@ -208,19 +237,26 @@ int main() {
     BeginDrawing();
 
     StepResult state = currentSorter->getState();
+    if (!state.done) {
+      timerElapsed = GetTime() - timerStart;
+    }
     Render::draw(numbers, state, WIDTH, HEIGHT, colors);
 
-    if (state.done) {
-      DrawText("SORTED!", 20, 20, 40, colors.sorted);
-
+    if (state.done && !sortedWasDone) {
+      sortedWasDone = true;
       for (int i = 0; i < amountOfNumbers; i++) {
         std::cout << numbers[i] << " ";
       }
       std::cout << std::endl;
     }
 
-    currentAlgorithmName = algorithmNames[lastAlgorithm];
-    DrawText(currentAlgorithmName, 20, 70, 20, colors.pivot);
+    if (state.done) {
+      DrawText("SORTED!", 20, 20, 40, colors.sorted);
+    }
+
+    const char *name = algorithmNames[lastAlgorithm];
+    const char *comp = complexities[lastAlgorithm];
+    DrawText(TextFormat("%s  %s", name, comp), 20, 70, 20, colors.pivot);
 
     std::string modeText = resetOnChange ? "Mode: NEW" : "Mode: CONTINUE";
     DrawText(modeText.c_str(), 20, 100, 20, colors.defaultBar);
@@ -231,6 +267,12 @@ int main() {
     int speedPercent = (fps * 100) / BASE_FPS;
     std::string speedText = "SPEED: " + std::to_string(speedPercent) + "%";
     DrawText(speedText.c_str(), 20, 160, 20, colors.swapping);
+
+    int minutes = (int)timerElapsed / 60;
+    int seconds = (int)timerElapsed % 60;
+    int millis = (int)((timerElapsed - (int)timerElapsed) * 100);
+    DrawText(TextFormat("TIME: %02d:%02d.%02d", minutes, seconds, millis),
+             20, 190, 20, colors.defaultBar);
 
     EndDrawing();
   }

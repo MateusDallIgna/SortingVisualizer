@@ -48,7 +48,7 @@ void Render::draw(const std::vector<int> array, const StepResult &state,
   float barWidth = (float)width / array.size();
   int gap = 2;
 
-  if (state.swapped && !anim.active) {
+  if (state.swapped && !anim.active && state.indexA >= 0 && state.indexB >= 0) {
     anim.idxA = state.indexA;
     anim.idxB = state.indexB;
     anim.startA = array[state.indexB];

@@ -313,7 +313,7 @@ void BogoSort::step() {
 
   currentState.indexA = -1;
   currentState.indexB = -1;
-  currentState.swapped = true;
+  currentState.swapped = false;
 }
 
 StepResult BogoSort::getState() const { return currentState; }
