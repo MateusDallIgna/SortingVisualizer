@@ -46,6 +46,7 @@ int main() {
   }
 
   InitWindow(WIDTH, HEIGHT, TITLE);
+  InitAudioDevice();
   SetTargetFPS(fps);
 
   std::vector<int> numbers(amountOfNumbers);
@@ -234,6 +235,7 @@ int main() {
     EndDrawing();
   }
 
+  CloseAudioDevice();
   CloseWindow();
   delete currentSorter;
 
